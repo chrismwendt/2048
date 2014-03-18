@@ -3,3 +3,5 @@ Get the [Haskell Platform](www.haskell.org/platform/) and install the dependenci
 `cabal install monad-loops split`
 
 Finally, run it with `runhaskell Main.hs`
+
+Controls are i, j, k, l for Up, Left, Down, Right.
