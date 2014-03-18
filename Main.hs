@@ -16,6 +16,7 @@ main :: IO ()
 main = do
     hSetBuffering stdin NoBuffering
     gs <- insertRandom (GameState (replicate 4 (replicate 4 0)))
+    print gs
     L.iterateUntilM (not . hasMove) move gs
     putStrLn "Game over."
 
