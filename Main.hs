@@ -10,7 +10,7 @@ import System.IO
 data GameState = GameState [[Integer]] deriving (Eq, Read)
 
 instance Show GameState where
-    show (GameState cells) = unlines $ map (intercalate " " . map show) cells
+    show (GameState cells) = unlines $ map (unwords . map show) cells
 
 main :: IO ()
 main = do
