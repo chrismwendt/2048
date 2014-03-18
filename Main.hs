@@ -63,7 +63,3 @@ insertRandom (GameState cells) = do
     let is = elemIndices 0 (concat cells)
     i <- randomRIO (0, length is - 1)
     return $ GameState $ chunksOf 4 $ F.toList $ S.update (is !! i) 2 $ S.fromList (concat cells)
-
-count :: (a -> Bool) -> [a] -> Integer
-count f [] = 0
-count f (a:as) = (if f a then 1 else 0) + count f as
