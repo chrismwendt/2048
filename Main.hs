@@ -21,7 +21,7 @@ main = do
     putStrLn "Game over."
 
 hasMove :: GameState -> Bool
-hasMove (GameState cells) = 0 `elem` concat cells || 0 `elem` (concatMap (\r -> zipWith (-) r (tail r)) (cells ++ transpose cells))
+hasMove (GameState cells) = 0 `elem` concat cells || 0 `elem` concatMap (\r -> zipWith (-) r (tail r)) (cells ++ transpose cells)
 
 move :: GameState -> IO GameState
 move gs@(GameState cells) = do
