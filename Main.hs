@@ -38,9 +38,14 @@ move gs@(GameState cells) = do
             gs'' <- insertRandom gs'
             print gs''
             return gs''
-        else do
-            putStrLn "Invalid move."
-            return gs
+        else if a `elem` "ijkl"
+            then do
+                print gs
+                return gs
+            else do
+                putStrLn "Invalid move. Use i, j, k, l for Up, Left, Down, Right."
+                print gs
+                return gs
 
 moveRow :: [Integer] -> [Integer]
 moveRow vs = let (l, r) = partition (== 0) vs in moveRow' (l ++ r)
