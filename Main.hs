@@ -5,6 +5,7 @@ import System.Random
 import qualified Data.Sequence as S
 import Data.List.Split
 import qualified Data.Foldable as F
+import System.IO
 
 data GameState = GameState [[Integer]] deriving (Eq, Read)
 
@@ -13,6 +14,7 @@ instance Show GameState where
 
 main :: IO ()
 main = do
+    hSetBuffering stdin NoBuffering
     gs <- insertRandom (GameState (replicate 4 (replicate 4 0)))
     L.iterateUntilM (not . hasMove) move gs
     putStrLn "Game over."
