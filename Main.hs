@@ -6,11 +6,12 @@ import qualified Data.Sequence as S
 import Data.List.Split
 import qualified Data.Foldable as F
 import System.IO
+import Text.Printf
 
 data GameState = GameState [[Integer]] deriving (Eq, Read)
 
 instance Show GameState where
-    show (GameState cells) = unlines $ map (unwords . map show) cells
+    show (GameState cells) = unlines $ map (unwords . map (printf "%4d")) cells
 
 main :: IO ()
 main = do
