@@ -1,0 +1,17 @@
+cabal-version: 3.0
+name: twenty48
+version: 0.1.0.0
+synopsis: A 2048 game implementation in Haskell
+author: User
+maintainer: user@example.com
+build-type: Simple
+
+executable twenty48
+    main-is: Main.hs
+    build-depends:
+        base >=4.18 && <5,
+        monad-loops >=0.4,
+        random >=1.2,
+        split >=0.2,
+        containers >=0.6
+    default-language: Haskell2010
